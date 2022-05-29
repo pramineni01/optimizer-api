@@ -1,14 +1,17 @@
 {
   "name": "",
+  "version": "",
   "kind": "",
   "settings":
   {
     "infra": {},
-    "modeler": {},
+    "modeler": {
+      type: "pyomo|ampl|juliet|or-tools",
+    },
     "solver": {},
   },
   "model": {
-  
+    "type": "abstract|concrete",
+    "data": {}
   },
-  "data": {},
 }
