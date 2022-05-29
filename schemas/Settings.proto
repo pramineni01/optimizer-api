@@ -1,0 +1,53 @@
+syntax = "proto3";
+package optimizer;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/optimizer-cloud-schema/";
+
+
+/*
+InfraSettings 
+*/
+
+
+/*enum Provider {
+    MANAGED = 0,
+    AWS = 1,
+    GCP = 2,
+    AZURE = 3,
+}*/
+
+message InfraSettings {
+    oneof provider_settings {
+        ManagedProviderSettings managed_provider_settings = 1;
+        AWSProviderSettings aws_provider_settings = 2;
+        GCPProviderSettings gcp_provider_settings = 3;
+        AzureProviderSettings azure_provider_settings = 4;
+    }
+}
+
+message ModelerSettings {
+    
+}
+
+message SolverSettings {
+    
+}
+
+
+message ManagedProviderSettings {
+    /* Managed Provider Settings */
+}
+
+message AWSProviderSettings {
+    /* AWS Provider Settings */
+}
+
+message GCPProviderSettings {
+    /* GCP Provider Settings */
+}
+
+message AzureProviderSettings {
+    /* Azure Provider Settings */
+}

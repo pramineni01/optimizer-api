@@ -6,9 +6,9 @@
   {
     "infra": {},
     "modeler": {
-      type: "pyomo|ampl|juliet|or-tools",
+      "type": "pyomo|ampl|juliet|or-tools",
     },
-    "solver": {},
+    "solver": {}
   },
   "model": {
     "type": "abstract|concrete",
