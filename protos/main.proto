@@ -1,0 +1,12 @@
+syntax = "proto3";
+package optimizer-schema;
+
+import "google/protobuf/timestamp.proto";
+message OptimizerSchema {
+    // for now version is string
+    string version = 1;
+
+    InputSettings input_settings = 2;
+    InputData input_data = 3;
+    OutputSettings output_settings = 4;
+}

@@ -1,0 +1,78 @@
+syntax = "proto3";
+package optimizer-schema;
+
+message InputSettings {
+    InfraSettings infra_settings = 1;
+    ModelerSettings modeler_settings = 2;
+    SolverSettings solver_settings = 3;
+}
+
+message InfraSettings {
+    // TODO: come back to this
+    // service type: microservice / lambda <- do we need to give an option?
+    // api type: rest, graphql or grpc <- do we need to give an option?
+    // provider: aws / gcp / azure / alibaba / digital ocean
+    // 
+
+}
+
+/*enum ModelerKind {
+    PYOMO = 0;
+    ORTOOLS = 1;
+    AMPL = 2;
+    GAMS = 3;
+    JUMP = 4;
+}*/
+
+message ModelerSettings {
+    // ModelerKind kind = 1;
+
+    oneof modeler_settings {
+        PyomoModelerSettings pyomo_settings = 1;
+        ORToolsModelerSettings ortools_settings = 2;
+        AMPLModelerSettings ampl_settings = 3;
+        GAMSModelerSettings gams_settings = 4;
+        JUMPModelerSettings jump_settings = 5;
+    }
+}
+
+message PyomoModelerSettings {
+    string model_name = 1;
+    
+    enum PyomoModelType {
+        Concrete = 0;
+        Abstract = 1;
+    }
+
+    PyomoModelType pyomo_model_type = 2;
+
+    // more settings to consider
+    // keep-alive
+    // 
+    
+}
+
+message ORToolsModelerSettings {
+
+}
+
+message AMPLModelerSettings {
+
+}
+
+message GAMSModelerSettings {
+
+}
+
+message JUMPModelerSettings {
+
+}
+
+
+
+message SolverSettings {
+    // TODO: come back to this
+    // solver type: glpk, cbc, scip, or what else?
+    // resources: cpu, memory, storage
+    // or already provisioned endpoints
+}

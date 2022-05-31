@@ -1,5 +1,4 @@
 {
-  "name": "",
   "version": "",
   "kind": "",
   "settings":
@@ -8,10 +7,12 @@
     "modeler": {
       "type": "pyomo|ampl|juliet|or-tools",
     },
-    "solver": {}
+    "solver": {
+      "type": "glpk|cbc|"
+    }
   },
   "model": {
     "type": "abstract|concrete",
-    "data": {}
   },
+  
 }

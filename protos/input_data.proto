@@ -1,0 +1,38 @@
+syntax = "proto3";
+package optimizer-schema;
+
+message InputData {
+    Oneof input_data {
+        PyomoInputData pyomo_input_data = 1;
+        ORToolsInputData ortools_input_data = 2;
+        AMPLInputData ampl_input_data = 3;
+        GAMSInputData gams_input_data = 4;
+        JUMPInputData jump_input_data = 5;
+    }
+}
+
+message PyomoInputData pyomo_input_data {
+    Objective objective = 1;
+    repeated Set sets = 2;
+    repeated Var vars = 3;
+    repeated Constraint constraints = 4;
+    repeated Parameter parameters = 5;
+    repeated Expression expression = 6;
+    repeated suffix suffixes = 7;
+}
+
+message ORToolsInputData ortools_input_data {
+
+}
+
+message AMPLInputData ampl_input_data {
+
+}
+
+message GAMSInputData gams_input_data {
+
+}
+
+message JUMPInputData jump_input_data {
+
+}
